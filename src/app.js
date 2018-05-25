@@ -1,7 +1,7 @@
 import boxRoutes from './controllers/boxController.js';
-import Express from 'express';
+import express from 'express';
+import session from 'express-session';
 
-const express = require('express');
 const app = express();
 
 /*const handleRender = (req, res) => {
@@ -26,6 +26,17 @@ const app = express();
     .catch(err => res.end(err.message));
   })
 }*/
+
+app.use(session({
+    name: 'sid',
+    secret: 'sessionbeautybox',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: 300 * 1000
+    }
+}));
+
 app.use('/app', boxRoutes);
 /*app.use(handleRender);*/
 app.listen(80, (error) => {

@@ -47,6 +47,7 @@ fs.readdirSync(__dirname).filter(function(file) {
   }).forEach(function(file) {
     var model = sequelize.import(path.join(__dirname, file));
     console.log('Imported ' + model.name);
+	console.log(model.findAll);
     db[model.name] = model;
   });
 
@@ -57,5 +58,6 @@ Object.keys(db).forEach(function(modelName) {
 });
 
 db.sequelize = sequelize;
+db.Sequelize = Sequelize
 
 export default db;

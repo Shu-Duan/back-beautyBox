@@ -1,7 +1,7 @@
 
-  const userInfo = 
+  const _export = 
 (sequelize,DataTypes)=>{
-  sequelize.define('user_info', {
+  const userInfo = sequelize.define('userInfo', {
     uuid: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -19,7 +19,10 @@
     phone: {
       type: DataTypes.STRING
     }
-  }
+  }, {
+        tableName: 'user_info',
+		timestamps: false
+    }
   /*, {
     classMethods: {
       associate: function(models) {
@@ -32,4 +35,4 @@
 }
 
 
-export default userInfo;
+export default _export;

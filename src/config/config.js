@@ -1,9 +1,9 @@
 const config= {
   db: {
-    username: '',
-    password: '',
+    username: 'normalusr',
+    password: 'jeserlin626',
     database: 'beautybox',
-    host: '',
+    host: '54.175.73.173',
     port: '13496',
     dialect: 'mysql',
   }
