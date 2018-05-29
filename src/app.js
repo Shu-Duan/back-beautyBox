@@ -1,4 +1,4 @@
-import boxRoutes from './controllers/boxController.js';
+import loginRoutes from './controllers/loginController.js';
 import express from 'express';
 import session from 'express-session';
 
@@ -37,7 +37,7 @@ app.use(session({
     }
 }));
 
-app.use('/app', boxRoutes);
+app.use('/login', loginRoutes);
 /*app.use(handleRender);*/
 app.listen(80, (error) => {
   if (error) {

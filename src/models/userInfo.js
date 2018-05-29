@@ -1,6 +1,4 @@
-
-  const _export = 
-(sequelize,DataTypes)=>{
+const _export = (sequelize,DataTypes)=>{
   const userInfo = sequelize.define('userInfo', {
     uuid: {
       type: DataTypes.UUID,
